@@ -1,23 +1,20 @@
 {
-	"name": "vite-vanilla-ts",
-	"version": "0.0.0",
-	"description": "Vite Vanilla TS",
-	"author": "",
-	"license": "",
-	"main": "./src/index.html",
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "tsc && vite build",
-		"preview": "vite preview"
-	},
-	"devDependencies": {
-		"sass": "^1.77.2",
-		"typescript": "^5.4.2",
-		"vite": "^5.2.2"
-	},
-	"dependencies": {
-		"@types/inquirer": "^9.0.7",
-		"inquirer": "^9.2.22"
-	}
+  "name": "vite-vanilla-ts",
+  "version": "0.0.0",
+  "description": "Vite Vanilla TS",
+  "author": "",
+  "license": "",
+  "main": "./src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc src/index.ts",
+    "server": "nodemon dist/assets/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@types/inquirer": "^9.0.7",
+    "inquirer": "^9.2.22"
+  }
 }

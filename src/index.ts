@@ -1,5 +1,5 @@
-import { TodoItem } from './todoItem';
-import { TodoCollection } from './todoCollection';
+import { TodoItem } from './todoItem.js';
+import { TodoCollection } from './todoCollection.js';
 import inquirer from 'inquirer';
 
 let todos: TodoItem[] = [
