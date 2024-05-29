@@ -8,13 +8,13 @@ importers:
 
   .:
     dependencies:
-      '@types/inquirer':
-        specifier: ^9.0.7
-        version: 9.0.7
       inquirer:
         specifier: ^9.2.22
         version: 9.2.22
     devDependencies:
+      '@types/inquirer':
+        specifier: ^9.0.7
+        version: 9.0.7
       typescript:
         specifier: ^5.4.2
         version: 5.4.5
