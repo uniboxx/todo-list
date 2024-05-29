@@ -15,5 +15,9 @@
 		"sass": "^1.77.2",
 		"typescript": "^5.4.2",
 		"vite": "^5.2.2"
+	},
+	"dependencies": {
+		"@types/inquirer": "^9.0.7",
+		"inquirer": "^9.2.22"
 	}
 }

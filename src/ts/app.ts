@@ -1,19 +1,45 @@
 import { TodoItem } from './todoItem';
 import { TodoCollection } from './todoCollection';
+import inquirer from 'inquirer';
 
-let todos = [
+let todos: TodoItem[] = [
   new TodoItem(1, 'Buy Flowers'),
   new TodoItem(2, 'Get Shoes'),
   new TodoItem(3, 'Collect Tickets'),
   new TodoItem(4, 'Call Joe', true),
 ];
 
-let collection = new TodoCollection('Adam', todos);
+let collection: TodoCollection = new TodoCollection('Adam', todos);
 
-console.clear();
-console.log(`${collection.userName}'s Todo List`);
+function displayTodoList(): void {
+  console.log(
+    `${collection.userName}'s Todo List (${
+      collection.getItemCounts().incomplete
+    } items to do)`
+  );
+  collection.getTodoItems(true).forEach(item => item.printDetails());
+}
 
-let newId = collection.addTodo('Go for run');
-let newTodoItem = collection.getTodoById(newId);
+enum Commands {
+  Quit = 'Quit',
+}
 
-newTodoItem?.printDetails();
+function promptUser(): void {
+  console.clear();
+  displayTodoList();
+  inquirer
+    .prompt({
+      type: 'list',
+      name: 'command',
+      message: 'Choose option',
+      choices: Object.values(Commands),
+    })
+    .then(answers => {
+      if (answers['command'] !== Commands.Quit) {
+        promptUser();
+      }
+    })
+    .catch(err => console.error(err.message));
+}
+
+promptUser();
